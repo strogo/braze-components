@@ -1,0 +1,10 @@
+stacks: [targeting]
+regions: [eu-west-1]
+deployments:
+    storybook-static:
+        type: aws-s3
+        parameters:
+            bucket: braze-components-storybook
+            prefixPackage: false
+            prefixStack: false
+            cacheControl: public, max-age=3600
