@@ -5,6 +5,5 @@ deployments:
         type: aws-s3
         parameters:
             bucket: braze-components-storybook
-            prefixPackage: false
             prefixStack: false
             cacheControl: public, max-age=3600
