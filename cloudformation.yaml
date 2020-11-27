@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Persistent resources for braze-components
+
+Parameters:
+    Stack:
+        Type: String
+        Default: targeting
+    Stage:
+        Type: String
+        Default: prod
+    App:
+        Type: String
+        Default: braze-components
+
+Resources:
+    AppDataBucket:
+        Type: AWS::S3::Bucket
+        Properties:
+            BucketName: !Sub braze-components-storybook-${Stage}
+            Tags:
+                - Key: App
+                  Value: !Ref App
+                - Key: Owner
+                  Value: targeted-experiences
+                - Key: Stack
+                  Value: !Ref Stack
+                - Key: Stage
+                  Value: !Ref Stage
